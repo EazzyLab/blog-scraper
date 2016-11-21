@@ -35,7 +35,6 @@ args = parser.parse_args()
 if args.verbose:
 	logging.basicConfig(level=logging.INFO)
 
-print(args)
 
 logging.info('Loading proxies from textfile.')
 proxies = load_proxies(args.proxies)
