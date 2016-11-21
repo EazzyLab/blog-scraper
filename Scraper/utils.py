@@ -15,7 +15,9 @@ def load_proxies(filepath):
 				proxies.append(line)
 
 			elif len(line.split(':')) == 4:
-				proxies.append(line)
+				splited = line.split(':')
+				proxy = splited[2] + ':' + splited[3] + '@' + splited[0] + ':' + splited[1]
+				proxies.append(proxy)
 
 			else:
 				print('Invalid proxy on line %i' % (line_enumerator))
@@ -62,7 +64,7 @@ def compute_url(query, language_code, engine, num_results, start_at=0, safe_sear
 	else:
 		start_at = '&start=' + str(start_at)
 
-	url = 'https://{0}/search?q={1}&btnG=Search&num={2}&lr={3}{4}{5}&gws_rd=ssl' \
+	url = 'https://{0}/search?q={1}&btnG=Search&num={2}&lr={3}{4}{5}' \
                 .format(engine, urllib.parse.quote(query), num_results, language_code, safe_search, start_at)
 
 	return url

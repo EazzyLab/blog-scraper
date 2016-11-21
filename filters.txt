@@ -1,1 +1,3 @@
-"leave a comment"
+"laisser un commentaire"
+"commentaires"
+"votre commentaire"
