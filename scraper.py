@@ -62,16 +62,12 @@ for query in queries:
 	query_flag = False
 	start_at = 0
 
-	logging.info('Above first while : %i', start_at)
 	while not query_flag:
-		logging.info('Under first while : %i', start_at)
 
 		tries = 0 # max tries = 3
 		response_flag = False
 
-		logging.info('Above second while : %i', start_at)
 		while not response_flag and tries < 3:
-			logging.info('Under second while : %i', start_at)
 
 			response = google_search.search(query, start_at)
 

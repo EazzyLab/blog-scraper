@@ -28,19 +28,6 @@ def load_proxies(filepath):
 def get_language_code(country_code):
 	if country_code:
 		switcher = {
-			'US':'www.google.com',
-			'FR':'www.google.fr',
-			'NL':'www.google.nl',
-			'DE':'www.google.de'
-			}
-		return switcher.get(country_code, 'www.google.com')
-	else:
-		return 'www.google.com'
-
-
-def get_google_engine(country_code):
-	if country_code:
-		switcher = {
 			'US':'lang_en',
 			'DE':'lang_de',
 			'FR':'lang_fr',
@@ -50,6 +37,18 @@ def get_google_engine(country_code):
 	else:
 		return 'lang_en'
 
+
+def get_google_engine(country_code):
+	if country_code:
+		switcher = {
+			'US':'www.google.com',
+			'FR':'www.google.fr',
+			'NL':'www.google.nl',
+			'DE':'www.google.de'
+			}
+		return switcher.get(country_code, 'www.google.com')
+	else:
+		return 'www.google.com'
 
 def compute_url(query, language_code, engine, num_results, start_at=0, safe_search=False):
 
